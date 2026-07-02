@@ -21,7 +21,7 @@ def support_agent(user_input: str) -> str:
             update_current_trace( expected_output=golden.expected_output )
 
     return _support_agent( user_input )
-
+tool_correctness = ToolCorrectnessMetric()
 
 
 
