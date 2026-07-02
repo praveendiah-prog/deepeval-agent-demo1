@@ -15,6 +15,9 @@ from agent_instrumented import support_agent as _support_agent
 def support_agent(user_input: str) -> str:
     golden = get_current_golden()
     if golden:
+        Golden(input="Where is my order ORD-1042?",
+               expected_tools=[ToolCall(name="get_order_status")]),
+
         if golden.expected_tools:
             update_current_trace( expected_tools=golden.expected_tools )
         if golden.expected_output:
